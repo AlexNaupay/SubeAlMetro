@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
 	font-family: MozTT;
 	src: url('MozTT.ttf');
 } 
@@ -149,4 +149,32 @@ section[role="region"] > header:first-child img {
 
 .horaRumboGrauActual {
 	color: red !important;
+}*/
+
+#custom-header {
+	background-color: #47AA42;
+    background-image: none;
+    font-size: 1.5em;
+    color: white;
+   
+}
+
+#custom-header header{
+	padding-top: 8px;
+	text-align: left;
+	position: inherit;
+}
+
+.custom-slide-box-tabbar x-tabbar-tab{
+	background-color: black;
+    background-image: none;
+    background-position: none;
+    height: 40px;
+    border: none;
+    padding-top: 8px;   
+}
+
+.custom-slide-box-tabbar x-tabbar-tab img{
+	width: 18px;
+	height: 24px;
 }

@@ -21,8 +21,25 @@
         <div><img src="img/logo.png"/></div>
         <header>Estaciones</header>        
       </x-appbar>
-    </x-layout>
+
+      <x-tabbar id="slide-box-tabbar" class="custom-slide-box-tabbar">
+        <x-tabbar-tab><img src="img/estacion.png"/></x-tabbar-tab>
+        <x-tabbar-tab><img src="img/mapa.png"/></x-tabbar-tab>
+        <x-tabbar-tab><img src="img/twitter.png"/></x-tabbar-tab>
+        <x-tabbar-tab><img src="img/info.png"/></x-tabbar-tab>
+      </x-tabbar>
+
+      <x-slidebox class="component-demo" orientation="x">
+        <x-slides>      
+          <x-slide><!-- content unimportant -->sdfsd</x-slide>
+          <x-slide><!-- content unimportant -->sdf</x-slide>
+          <x-slide><!-- content unimportant -->dsfsdf</x-slide>
+          <x-slide><!-- content unimportant -->info</x-slide>
+        </x-slides>
+      </x-slidebox>
 		
+    </x-layout>
+
     <!--section role="region" id="home-view">
 
       <header>                
@@ -111,6 +128,26 @@
   <script type="text/javascript" src="js/moment.min.js" charset="utf-8"></script>     
   <script type="text/javascript" src="js/app.js" charset="utf-8"></script>   
   <script type="text/javascript" src="js/mapa.js" charset="utf-8"></script--> 
+    <script type="text/javascript">
+
+    document.addEventListener('DOMComponentsLoaded', function(){
+    // demonstrate dynamic tab-target handling in slidebox demo
+    var slideBox = document.querySelector('x-slidebox');
+    var slideBoxTabbar = document.getElementById("slide-box-tabbar");
+
+    // assign each tab to its respective slide in the slidebox
+    var tabs = slideBoxTabbar.tabs;
+    var slides = xtag.query(slideBox, 'x-slide');
+    for(var i=0; i < slides.length && i < tabs.length; i++){
+        var tab = tabs[i];
+        var slide = slides[i];
+        
+        // assign each slide to its respective tabbar tab
+        tab.targetElems = [slide];
+    }
+});
+
+    </script>
   </body>
 
 </html>
