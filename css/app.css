@@ -1,16 +1,16 @@
-/*@font-face {
+@font-face {
 	font-family: MozTT;
 	src: url('MozTT.ttf');
 } 
+
 html, body {
 	color: #383838;
 	margin: 0;
 	padding: 0;
-	font-size: 10px;
-	font-family: MozTT;	
-	background-image: url('square_bg.png') !important;
+	font-size: 14px;
+	font-family: MozTT;		
 } 
-body {
+/*body {
 	height: 100%;
 	display: block;
 	overflow: hidden;
@@ -175,6 +175,20 @@ section[role="region"] > header:first-child img {
 }
 
 .custom-slide-box-tabbar x-tabbar-tab img{
+	width: 24px;
+	height: 24px;
+}
+
+.custom-slide-box-tabbar .custom-img {
 	width: 18px;
 	height: 24px;
+}
+
+.content-info{
+	padding: 10px;	
+}
+
+#map {
+	width: 100%;
+	height: 480px;
 }

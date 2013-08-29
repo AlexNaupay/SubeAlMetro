@@ -11,7 +11,7 @@ function agregarUbicacion(longitud, latitud, icon, w, h){
 var coor_from = new OpenLayers.Projection("EPSG:4326");
 var coor_to   = new OpenLayers.Projection("EPSG:900913");
 
-map = new OpenLayers.Map("info-mapa");
+map = new OpenLayers.Map("map");
 
 map.addLayer(new OpenLayers.Layer.OSM());
 map.zoomToMaxExtent();
