@@ -33,7 +33,7 @@
         <x-slides>      
           <x-slide><!-- content unimportant -->estaciones</x-slide>
           <x-slide><div id="map"></div></x-slide>
-          <x-slide><!-- content unimportant -->twitter</x-slide>
+          <x-slide><div id="tweets"></div></x-slide>
           <x-slide class="content-info">
 
             <h1>Información</h1>              
@@ -138,35 +138,27 @@
   <script type="text/javascript" src="js/jquery-1.10.2.min.js" charset="utf-8"></script>  
   <script type="text/javascript" src="js/brick-1.0beta6.js" charset="utf-8"></script>  
   <script type="text/javascript" src="js/underscore-min.js" charset="utf-8"></script>  
-  <script type="text/javascript" src="js/backbone-min.js" charset="utf-8"></script>
-  <script type="text/javascript" src="js/data.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/backbone-min.js" charset="utf-8"></script>  
   <script type="text/javascript" src="js/OpenLayers.js" charset="utf-8"></script>
   <script type="text/javascript" src="js/mapa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/main.js" charset="utf-8"></script>
+  <script type="text/javascript" src="js/data.js" charset="utf-8"></script>
   <!--script type="text/javascript" src="js/latlong.js" charset="utf-8"></script> 
   <script type="text/javascript" src="js/OpenLayers.js" charset="utf-8"></script>
   <script type="text/javascript" src="js/moment.min.js" charset="utf-8"></script>     
   <script type="text/javascript" src="js/app.js" charset="utf-8"></script>   
   <script type="text/javascript" src="js/mapa.js" charset="utf-8"></script--> 
-    <script type="text/javascript">
+    
+  <script id="template" type="text/template"> 
+    <% _.each(tweet, function(t) { %>
 
-    document.addEventListener('DOMComponentsLoaded', function(){
-    // demonstrate dynamic tab-target handling in slidebox demo
-    var slideBox = document.querySelector('x-slidebox');
-    var slideBoxTabbar = document.getElementById("slide-box-tabbar");
+      <img src="<%= t.user.profile_image_url %>"/>
+      <h1><%= t.user.name %><span> @<%=t.user.screen_name %></span></h1>
+      <p><strong><%= t.text %></strong></p>
 
-    // assign each tab to its respective slide in the slidebox
-    var tabs = slideBoxTabbar.tabs;
-    var slides = xtag.query(slideBox, 'x-slide');
-    for(var i=0; i < slides.length && i < tabs.length; i++){
-        var tab = tabs[i];
-        var slide = slides[i];
-        
-        // assign each slide to its respective tabbar tab
-        tab.targetElems = [slide];
-    }
-});
+    <% }) %>  
+  </script>
 
-    </script>
   </body>
 
 </html>
