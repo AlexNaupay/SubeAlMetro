@@ -185,10 +185,15 @@ section[role="region"] > header:first-child img {
 }
 
 .content-info{
-	padding: 10px;	
+	padding: 10px;
 }
 
 #map {
 	width: 100%;
 	height: 480px;
+}
+#tweets {
+	width:320px;
+	height:320px;
+	overflow: auto;
 }
